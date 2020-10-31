@@ -6,6 +6,8 @@ public class ProxChat extends PluginBase {
     public void onEnable() {
         super.onEnable();
         getServer().getLogger().info("ProxChat Enabled");
+        saveDefaultConfig();
+        this.getServer().getPluginManager().registerEvents(new PlayerChatListner(this), this);
     }
 
     @Override

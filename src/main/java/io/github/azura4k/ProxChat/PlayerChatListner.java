@@ -1,10 +1,14 @@
 package io.github.azura4k.ProxChat;
 
 import cn.nukkit.Player;
+import cn.nukkit.command.CommandSender;
 import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.EventPriority;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerChatEvent;
+import cn.nukkit.utils.TextFormat;
+
+import java.util.Set;
 
 public class PlayerChatListner implements Listener {
 
@@ -45,11 +49,13 @@ public class PlayerChatListner implements Listener {
         //Check Player Position against the Config set radius and apply ruling
         if (DistanceX <= plugin.getConfig().getDouble("chatradius") & DistanceY <= plugin.getConfig().getDouble("chatradius") & DistanceZ < plugin.getConfig().getDouble("chatradius") & event.getPlayer().getLevel().getName() == recipiant.getLevel().getName()) {
             // Player is in the same world and in range, allow message to recipient
+            Set<CommandSender> r = event.getRecipients();
+            r.add(recipiant);
         }
         else {
             //Player is not in range or not in world, block message to recipient
-            event.setCancelled(true);
-        }
-    }
+            Set<CommandSender> r = event.getRecipients();
+            r.remove(recipiant);
+        } }
     }
 }

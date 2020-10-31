@@ -1,5 +1,0 @@
-# Configuration for ProxChat by Azura4k
-
-# The radius in each direction of blocks of which a player will be able to chat to another player
-# Default is 20 blocks
-chatradius: 20
