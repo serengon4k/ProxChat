@@ -1,5 +1,4 @@
-package io.github.teamseraph.ProxChat;
-
+package io.github.azura4k.ProxChat;
 import cn.nukkit.plugin.PluginBase;
 
 public class ProxChat extends PluginBase {
