@@ -1,0 +1,8 @@
+name: ProxChat
+author: Azura4k
+website: https://azura4k.gitub.io
+version: 1.0
+main: io.github.azura4k.ProxChat.ProxChat
+api: 1.0.0
+load: POSTWORLD
+commands:
